@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CS2 float crafting helper by Leon Ćwikliński</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,26 +17,48 @@
             padding: 10px;
             margin: 5px;
         }
-        #result {
+        #result, #skinResult {
             font-size: 1.2em;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>IEEE754 full float converter</h1>
-    <h2>Input your float here to get the exact full version of it</h2>
+    <h1>IEEE754 Float Converter</h1>
     <form id="float-form">
-        <label for="float-input">Enter any float:</label>
+        <label for="float-input">Enter a float:</label>
         <input type="text" id="float-input" name="float">
         <button type="submit">Convert</button>
     </form>
     <p id="result"></p>
-    <script src="script.js"></script>
-</body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
 
+    <h1>Last input calculator</h1>
+    <form id="skin-form">
+        <label for="desired-float">Desired Float:</label>
+        <input type="text" id="desired-float" name="desired-float"><br>
+        <label for="float-cap">   Float Cap:</label>
+        <input type="text" id="float-cap" name="float-cap"><br>
+        <label for="float-1">Float 1:</label>
+        <input type="text" id="float-1" name="float-1"><br>
+        <label for="float-2">Float 2:</label>
+        <input type="text" id="float-2" name="float-2"><br>
+        <label for="float-3">Float 3:</label>
+        <input type="text" id="float-3" name="float-3"><br>
+        <label for="float-4">Float 4:</label>
+        <input type="text" id="float-4" name="float-4"><br>
+        <label for="float-5">Float 5:</label>
+        <input type="text" id="float-5" name="float-5"><br>
+        <label for="float-6">Float 6:</label>
+        <input type="text" id="float-6" name="float-6"><br>
+        <label for="float-7">Float 7:</label>
+        <input type="text" id="float-7" name="float-7"><br>
+        <label for="float-8">Float 8:</label>
+        <input type="text" id="float-8" name="float-8"><br>
+        <label for="float-9">Float 9:</label>
+        <input type="text" id="float-9" name="float-9"><br>
+        <button type="submit">Calculate Last Float</button>
+    </form>
+    <p id="skinResult"></p>
+    <script src="script.js"></script>
 </body>
 </html>
