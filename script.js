@@ -2,7 +2,7 @@ document.getElementById('float-form').addEventListener('submit', function(event)
     event.preventDefault();
     const input = document.getElementById('float-input').value;
     const preciseFloat = preciseIEEE754Float(input);
-    document.getElementById('result').textContent = `Precise IEEE754 Float: ${preciseFloat}`;
+    document.getElementById('result').textContent = `Full float: ${preciseFloat}`;
 });
 
 document.getElementById('skin-form').addEventListener('submit', function(event) {
