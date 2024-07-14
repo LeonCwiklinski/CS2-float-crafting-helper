@@ -1,3 +1,4 @@
+/* General styling for body and forms */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -6,14 +7,52 @@ body {
 
 form {
     margin-bottom: 20px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top; /* Ensures forms are aligned at the top */
+    width: 100%; /* Ensure forms take full width */
+    max-width: 400px; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center align the forms */
 }
 
-input, button {
+/* Labels and inputs within form-groups */
+.form-group {
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center vertically within form-group */
+}
+
+.form-group label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    flex: 1; /* Take remaining space */
     padding: 10px;
     margin: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
-#result {
-    font-size: 1.2em;
-    font-weight: bold;
+/* Button alignment and styling */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+    width: 100%; /* Full width for submit buttons */
+}
+
+button:hover {
+    background-color: #A0A0A0;
 }
