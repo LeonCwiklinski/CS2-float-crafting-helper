@@ -5,6 +5,22 @@ document.getElementById('float-form').addEventListener('submit', function(event)
     document.getElementById('result').textContent = `Precise IEEE754 Float: ${preciseFloat}`;
 });
 
+document.getElementById('skin-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const desiredFloat = parseFloat(document.getElementById('desired-float').value);
+    const floatCap = parseFloat(document.getElementById('float-cap').value);
+    const floatInputs = [];
+    for (let i = 1; i <= 9; i++) {
+        floatInputs.push(parseFloat(document.getElementById('float-' + i).value));
+    }
+
+    const neededAverage = desiredFloat / floatCap;
+    const sumOfFloats = floatInputs.reduce((acc, val) => acc + val, 0);
+    const lastFloatNeeded = (neededAverage * 10) - sumOfFloats;
+
+    document.getElementById('skinResult').textContent = `Needed Average Float: ${neededAverage.toPrecision(17)}, Last Float Needed: ${lastFloatNeeded.toPrecision(17)}`;
+});
+
 function preciseIEEE754Float(float) {
     let floatNum = parseFloat(float);
     let floatArray = new Float32Array(1);
