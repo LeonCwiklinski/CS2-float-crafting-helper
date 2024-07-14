@@ -5,57 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IEEE754 Float Converter</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input, button {
-            padding: 10px;
-            margin: 5px;
-        }
-        #result, #skinResult {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
+        /* CSS styles for layout and appearance (previously provided) */
     </style>
 </head>
 <body>
-    <h1>IEEE754 Float Converter</h1>
+  <body style="background-color: #E0E0E0;">
+    <h1>LEoNaRd's CS2 custom float crafting tool</h1>
+  <br>
+  <h2>Type in a float here to see it in it's fullest form (20 digits after coma)</h2>
     <form id="float-form">
-        <label for="float-input">Enter a float:</label>
-        <input type="text" id="float-input" name="float">
+        <div class="form-group">
+            <label for="float-input">Enter a float:</label>
+            <input type="text" id="float-input" name="float">
+        </div>
         <button type="submit">Convert</button>
     </form>
     <p id="result"></p>
-
-    <h1>Last input calculator</h1>
+<br>
+    <h2>Last input calculator</h2>
+  <h4>Currently only skins with no lower float cap work</h4><br>
     <form id="skin-form">
-        <label for="desired-float">Desired Float:</label>
-        <input type="text" id="desired-float" name="desired-float"><br>
-        <label for="float-cap">   Float Cap:</label>
-        <input type="text" id="float-cap" name="float-cap"><br>
-        <label for="float-1">Float 1:</label>
-        <input type="text" id="float-1" name="float-1"><br>
-        <label for="float-2">Float 2:</label>
-        <input type="text" id="float-2" name="float-2"><br>
-        <label for="float-3">Float 3:</label>
-        <input type="text" id="float-3" name="float-3"><br>
-        <label for="float-4">Float 4:</label>
-        <input type="text" id="float-4" name="float-4"><br>
-        <label for="float-5">Float 5:</label>
-        <input type="text" id="float-5" name="float-5"><br>
-        <label for="float-6">Float 6:</label>
-        <input type="text" id="float-6" name="float-6"><br>
-        <label for="float-7">Float 7:</label>
-        <input type="text" id="float-7" name="float-7"><br>
-        <label for="float-8">Float 8:</label>
-        <input type="text" id="float-8" name="float-8"><br>
-        <label for="float-9">Float 9:</label>
-        <input type="text" id="float-9" name="float-9"><br>
+        <div class="form-group">
+            <label for="desired-float">Desired Float:</label>
+            <input type="text" id="desired-float" name="desired-float">
+        </div>
+        <div class="form-group">
+            <label for="float-cap">Float Cap:</label>
+            <input type="text" id="float-cap" name="float-cap">
+        </div>
+        <!-- Float inputs 1-9 -->
+        <div class="form-group">
+            <label for="float-1">Float 1:</label>
+            <input type="text" id="float-1" name="float-1">
+        </div>
+        <div class="form-group">
+            <label for="float-2">Float 2:</label>
+            <input type="text" id="float-2" name="float-2">
+        </div>
+        <div class="form-group">
+            <label for="float-3">Float 3:</label>
+            <input type="text" id="float-3" name="float-3">
+        </div>
+        <div class="form-group">
+            <label for="float-4">Float 4:</label>
+            <input type="text" id="float-4" name="float-4">
+        </div>
+        <div class="form-group">
+            <label for="float-5">Float 5:</label>
+            <input type="text" id="float-5" name="float-5">
+        </div>
+        <div class="form-group">
+            <label for="float-6">Float 6:</label>
+            <input type="text" id="float-6" name="float-6">
+        </div>
+        <div class="form-group">
+            <label for="float-7">Float 7:</label>
+            <input type="text" id="float-7" name="float-7">
+        </div>
+        <div class="form-group">
+            <label for="float-8">Float 8:</label>
+            <input type="text" id="float-8" name="float-8">
+        </div>
+        <div class="form-group">
+            <label for="float-9">Float 9:</label>
+            <input type="text" id="float-9" name="float-9">
+        </div>
         <button type="submit">Calculate Last Float</button>
     </form>
     <p id="skinResult"></p>
