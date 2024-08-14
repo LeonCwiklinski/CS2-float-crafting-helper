@@ -21,6 +21,30 @@ document.getElementById('skin-form').addEventListener('submit', function(event) 
     document.getElementById('skinResult').textContent = `Needed Average Float: ${neededAverage.toPrecision(17)}, Last Float Needed: ${lastFloatNeeded.toPrecision(17)}`;
 });
 
+document.getElementById('scout-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const floatInputs = [];
+    for (let i = 1; i <= 10; i++) {
+        floatInputs.push(parseFloat(document.getElementById('scout-float-' + i).value));
+    }
+
+    const sumOfFloats = floatInputs.reduce((acc, val) => acc + val, 0);
+    const averageFloat = sumOfFloats / 10;
+    const cappedFloat = averageFloat * 0.03;
+
+    const closestIEEE754Value = preciseIEEE754Float(cappedFloat);
+    const closestLowCap = preciseIEEE754Float(cappedFloat - 0.0000000004);
+    const closestHighCap = preciseIEEE754Float(cappedFloat + 0.0000000004);
+
+    document.getElementById('scoutResult').textContent = `
+        Full float sum: ${sumOfFloats.toPrecision(17)}
+        Average float: ${averageFloat.toPrecision(17)}
+        Capped float: ${cappedFloat.toPrecision(17)}
+        Closest IEEE754 value: ${closestIEEE754Value}
+        Low cap: ${closestLowCap}
+        High cap: ${closestHighCap}`;
+});
+
 function preciseIEEE754Float(float) {
     let floatNum = parseFloat(float);
     let floatArray = new Float32Array(1);
