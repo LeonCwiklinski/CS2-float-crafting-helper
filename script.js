@@ -42,7 +42,8 @@ document.getElementById('scout-form').addEventListener('submit', function(event)
     Capped float: ${cappedFloat.toPrecision(17)}<br>
     Closest IEEE754 value: ${closestIEEE}<br>
     Low cap: ${lowCap}<br>
-    High cap: ${highCap}`;
+    High cap: ${highCap}
+    `;
 });
 
 function preciseIEEE754Float(float) {
