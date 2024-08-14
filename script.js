@@ -36,18 +36,13 @@ document.getElementById('scout-form').addEventListener('submit', function(event)
     const closestLowCap = preciseIEEE754Float(cappedFloat - 0.0000000004);
     const closestHighCap = preciseIEEE754Float(cappedFloat + 0.0000000004);
 
-    document.getElementById('scoutResult').textContent = `
-        Full float sum: ${sumOfFloats.toPrecision(17)}
-        \n
-        Average float: ${averageFloat.toPrecision(17)}
-        \n
-        Capped float: ${cappedFloat.toPrecision(17)}
-        \n
-        Closest IEEE754 value: ${closestIEEE754Value}
-        \n
-        Low cap: ${closestLowCap}
-        \n
-        High cap: ${closestHighCap}`;
+    document.getElementById('float-calc-result').innerHTML = `
+    Full float sum: ${sum.toPrecision(17)}<br>
+    Average float: ${average.toPrecision(17)}<br>
+    Capped float: ${cappedFloat.toPrecision(17)}<br>
+    Closest IEEE754 value: ${closestIEEE}<br>
+    Low cap: ${lowCap}<br>
+    High cap: ${highCap}`;
 });
 
 function preciseIEEE754Float(float) {
