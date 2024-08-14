@@ -3,124 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEoNaRd's CS2 Custom Float Crafting Tools</title>
+    <title>Float Crafting Tools</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>LEoNaRd's CS2 Custom Float Crafting Tool</h1>
-    <br>
-    
+    <h1>Float Crafting Tool</h1>
+
     <!-- Float Precision Tool -->
-    <h2>Type in a float here to see it in its fullest form (20 digits after the comma)</h2>
+    <h2>Float Precision Tool</h2>
     <form id="float-form">
         <div class="form-group">
             <label for="float-input">Enter a float:</label>
-            <input type="text" id="float-input" name="float">
+            <input type="number" id="float-input" name="float" step="any" required>
         </div>
         <button type="submit">Convert</button>
     </form>
     <p id="result"></p>
-    <br>
-    
+
     <!-- Last Input Calculator -->
     <h2>Last Input Calculator</h2>
     <h4>Currently, only skins with no lower float cap work</h4>
-    <br>
     <form id="skin-form">
         <div class="form-group">
             <label for="desired-float">Desired Float:</label>
-            <input type="text" id="desired-float" name="desired-float">
+            <input type="number" id="desired-float" name="desired-float" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-cap">Float Cap:</label>
-            <input type="text" id="float-cap" name="float-cap">
+            <input type="number" id="float-cap" name="float-cap" step="any" required>
         </div>
         <!-- Float inputs 1-9 -->
         <div class="form-group">
             <label for="float-1">Float 1:</label>
-            <input type="text" id="float-1" name="float-1">
+            <input type="number" id="float-1" name="float-1" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-2">Float 2:</label>
-            <input type="text" id="float-2" name="float-2">
+            <input type="number" id="float-2" name="float-2" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-3">Float 3:</label>
-            <input type="text" id="float-3" name="float-3">
+            <input type="number" id="float-3" name="float-3" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-4">Float 4:</label>
-            <input type="text" id="float-4" name="float-4">
+            <input type="number" id="float-4" name="float-4" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-5">Float 5:</label>
-            <input type="text" id="float-5" name="float-5">
+            <input type="number" id="float-5" name="float-5" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-6">Float 6:</label>
-            <input type="text" id="float-6" name="float-6">
+            <input type="number" id="float-6" name="float-6" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-7">Float 7:</label>
-            <input type="text" id="float-7" name="float-7">
+            <input type="number" id="float-7" name="float-7" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-8">Float 8:</label>
-            <input type="text" id="float-8" name="float-8">
+            <input type="number" id="float-8" name="float-8" step="any" required>
         </div>
         <div class="form-group">
             <label for="float-9">Float 9:</label>
-            <input type="text" id="float-9" name="float-9">
+            <input type="number" id="float-9" name="float-9" step="any" required>
         </div>
         <button type="submit">Calculate Last Float</button>
     </form>
     <p id="skinResult"></p>
 
     <!-- Scout Acid Fade Tradeup Calculator -->
-    <br>
     <h2>Scout Acid Fade Tradeup Calculator</h2>
-    <h4>I know it might seem stupid but it's a feature made exclusively to help me with this skin xd</h4>
-    <br>
+    <h4>Feature to assist with skin calculations</h4>
     <form id="scout-form">
         <div class="form-group">
             <label for="scout-float-1">Float 1:</label>
-            <input type="text" id="scout-float-1" name="scout-float-1">
+            <input type="number" id="scout-float-1" name="scout-float-1" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-2">Float 2:</label>
-            <input type="text" id="scout-float-2" name="scout-float-2">
+            <input type="number" id="scout-float-2" name="scout-float-2" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-3">Float 3:</label>
-            <input type="text" id="scout-float-3" name="scout-float-3">
+            <input type="number" id="scout-float-3" name="scout-float-3" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-4">Float 4:</label>
-            <input type="text" id="scout-float-4" name="scout-float-4">
+            <input type="number" id="scout-float-4" name="scout-float-4" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-5">Float 5:</label>
-            <input type="text" id="scout-float-5" name="scout-float-5">
+            <input type="number" id="scout-float-5" name="scout-float-5" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-6">Float 6:</label>
-            <input type="text" id="scout-float-6" name="scout-float-6">
+            <input type="number" id="scout-float-6" name="scout-float-6" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-7">Float 7:</label>
-            <input type="text" id="scout-float-7" name="scout-float-7">
+            <input type="number" id="scout-float-7" name="scout-float-7" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-8">Float 8:</label>
-            <input type="text" id="scout-float-8" name="scout-float-8">
+            <input type="number" id="scout-float-8" name="scout-float-8" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-9">Float 9:</label>
-            <input type="text" id="scout-float-9" name="scout-float-9">
+            <input type="number" id="scout-float-9" name="scout-float-9" step="any" required>
         </div>
         <div class="form-group">
             <label for="scout-float-10">Float 10:</label>
-            <input type="text" id="scout-float-10" name="scout-float-10">
+            <input type="number" id="scout-float-10" name="scout-float-10" step="any" required>
         </div>
         <button type="submit">Did I mess my tradeup up?</button>
     </form>
