@@ -1,6 +1,10 @@
 document.getElementById('float-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    const input = document.getElementById('float-input').value;
+    const input = parseFloat(document.getElementById('float-input').value);
+    if (isNaN(input)) {
+        document.getElementById('result').textContent = "Please enter a valid float.";
+        return;
+    }
     const preciseFloat = preciseIEEE754Float(input);
     document.getElementById('result').textContent = `Full float: ${preciseFloat}`;
 });
@@ -9,9 +13,18 @@ document.getElementById('skin-form').addEventListener('submit', function(event) 
     event.preventDefault();
     const desiredFloat = parseFloat(document.getElementById('desired-float').value);
     const floatCap = parseFloat(document.getElementById('float-cap').value);
+    if (isNaN(desiredFloat) || isNaN(floatCap)) {
+        document.getElementById('skinResult').textContent = "Please enter valid floats for desired float and float cap.";
+        return;
+    }
     const floatInputs = [];
     for (let i = 1; i <= 9; i++) {
-        floatInputs.push(parseFloat(document.getElementById('float-' + i).value));
+        const float = parseFloat(document.getElementById('float-' + i).value);
+        if (isNaN(float)) {
+            document.getElementById('skinResult').textContent = `Please enter a valid float for Float ${i}.`;
+            return;
+        }
+        floatInputs.push(float);
     }
 
     const neededAverage = desiredFloat / floatCap;
@@ -25,7 +38,12 @@ document.getElementById('scout-form').addEventListener('submit', function(event)
     event.preventDefault();
     const floatInputs = [];
     for (let i = 1; i <= 10; i++) {
-        floatInputs.push(parseFloat(document.getElementById('scout-float-' + i).value));
+        const float = parseFloat(document.getElementById('scout-float-' + i).value);
+        if (isNaN(float)) {
+            document.getElementById('float-calc-result').textContent = `Please enter a valid float for Float ${i}.`;
+            return;
+        }
+        floatInputs.push(float);
     }
 
     const sumOfFloats = floatInputs.reduce((acc, val) => acc + val, 0);
@@ -47,17 +65,20 @@ document.getElementById('scout-form').addEventListener('submit', function(event)
 });
 
 function preciseIEEE754Float(float) {
-    let floatNum = parseFloat(float);
-    let floatArray = new Float64Array(1); // Using Float64Array for higher precision
-    floatArray[0] = floatNum;
-    let intArray = new Uint32Array(floatArray.buffer);
-    let binary = intArray[1].toString(2).padStart(32, '0') + intArray[0].toString(2).padStart(32, '0');
-
-    // Constructing the float value from binary
-    let sign = (binary[0] === '1') ? -1 : 1;
-    let exponent = parseInt(binary.substr(1, 11), 2) - 1023;
-    let mantissa = 1;
-
+    let buffer = new ArrayBuffer(8); // 64 bits
+    let float64Array = new Float64Array(buffer);
+    let uint32Array = new Uint32Array(buffer);
+    
+    float64Array[0] = float;
+    let binary = '';
+    
+    binary += uint32Array[1].toString(2).padStart(32, '0');
+    binary += uint32Array[0].toString(2).padStart(32, '0');
+    
+    let sign = binary[0] === '1' ? -1 : 1;
+    let exponent = parseInt(binary.substring(1, 12), 2) - 1023;
+    let mantissa = 1; // Implicit leading 1 for normalized numbers
+    
     for (let i = 12; i < 64; i++) {
         mantissa += parseInt(binary[i]) * Math.pow(2, -(i - 11));
     }
