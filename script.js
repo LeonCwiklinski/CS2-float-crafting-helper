@@ -38,10 +38,15 @@ document.getElementById('scout-form').addEventListener('submit', function(event)
 
     document.getElementById('scoutResult').textContent = `
         Full float sum: ${sumOfFloats.toPrecision(17)}
+        \n
         Average float: ${averageFloat.toPrecision(17)}
+        \n
         Capped float: ${cappedFloat.toPrecision(17)}
+        \n
         Closest IEEE754 value: ${closestIEEE754Value}
+        \n
         Low cap: ${closestLowCap}
+        \n
         High cap: ${closestHighCap}`;
 });
 
